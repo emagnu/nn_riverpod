@@ -32,6 +32,18 @@ class CartNotifier extends _$CartNotifier {
           image: 'assets/products/backpack.png'),
     };
   }
+
+  void addProduct(Product product) {
+    if (!state.contains(product)) {
+      state = {...state, product};
+    }
+  }
+
+  void removeProduct(Product product) {
+    if (state.contains(product)) {
+      state = state.where((p) => p != product).toSet();
+    }
+  }
 }
 
 //  //  //   ///

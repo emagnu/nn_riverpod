@@ -35,7 +35,7 @@ final reducedProductsProvider = AutoDisposeProvider<List<Product>>.internal(
 );
 
 typedef ReducedProductsRef = AutoDisposeProviderRef<List<Product>>;
-String _$cartNotifierHash() => r'a1742ff5ee728a5d9e9703d5b4f03612bf872428';
+String _$cartNotifierHash() => r'2772c60efb2a768df5dfdca58fb4d40192646bfc';
 
 /// See also [CartNotifier].
 @ProviderFor(CartNotifier)
