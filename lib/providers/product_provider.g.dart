@@ -35,5 +35,20 @@ final reducedProductsProvider = AutoDisposeProvider<List<Product>>.internal(
 );
 
 typedef ReducedProductsRef = AutoDisposeProviderRef<List<Product>>;
+String _$cartNotifierHash() => r'a1742ff5ee728a5d9e9703d5b4f03612bf872428';
+
+/// See also [CartNotifier].
+@ProviderFor(CartNotifier)
+final cartNotifierProvider =
+    AutoDisposeNotifierProvider<CartNotifier, Set<Product>>.internal(
+  CartNotifier.new,
+  name: r'cartNotifierProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$cartNotifierHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef _$CartNotifier = AutoDisposeNotifier<Set<Product>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

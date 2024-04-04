@@ -35,5 +35,5 @@ class MyApp extends StatelessWidget {
 //  Import LIBRARIES
 //  Import FILES
 //  PARTS
-//  PROVIDERS
+//  GENERATED PROVIDERS
 //  //  //   ///

@@ -6,7 +6,7 @@ import '../models/product.dart';
 //  PARTS
 part 'product_provider.g.dart';
 
-//  PROVIDERS
+//  GENERATED PROVIDERS
 //   --- productsProvider
 @riverpod
 List<Product> products(ProductsRef ref) {
@@ -18,6 +18,22 @@ List<Product> products(ProductsRef ref) {
 List<Product> reducedProducts(ReducedProductsRef ref) {
   return allProducts.where((p) => p.price < 50).toList();
 }
+
+//   --- cartNotifierProvider
+@riverpod
+class CartNotifier extends _$CartNotifier {
+  @override
+  Set<Product> build() {
+    return const {
+      Product(
+          id: '4',
+          title: 'Red Backpack',
+          price: 14,
+          image: 'assets/products/backpack.png'),
+    };
+  }
+}
+
 //  //  //   ///
 
 const List<Product> allProducts = [

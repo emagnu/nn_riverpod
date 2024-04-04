@@ -14,6 +14,7 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final allProducts = ref.watch(productsProvider);
+    final cartProducts = ref.watch(cartNotifierProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -33,34 +34,44 @@ class HomeScreen extends ConsumerWidget {
           ),
           itemBuilder: (context, index) {
             return Container(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(15),
               color: Colors.blueGrey.withOpacity(0.05),
               child: Column(
                 children: <Widget>[
-                  Image.asset(
-                    allProducts[index].image,
-                    width: 60,
-                    height: 60,
-                  ),
-                  const SizedBox(height: 25),
+                  Image.asset(allProducts[index].image, width: 60, height: 60),
+                  const SizedBox(height: 10),
                   Text(
                     allProducts[index].title,
                     // maxLines: 2,
                     // overflow: TextOverflow.ellipsis,
                     // textAlign: TextAlign.center,
                     // softWrap: false,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    // style: const TextStyle(
+                    //   fontSize: 16,
+                    //   fontWeight: FontWeight.bold,
+                    // ),
                   ),
                   Text(
                     '£${allProducts[index].price}',
-                    style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+                    // style: const TextStyle(
+                    //   fontSize: 18,
+                    //   fontWeight: FontWeight.bold,
+                    // ),
+                  ),
+                  if (cartProducts.contains(allProducts[index]))
+                    TextButton(
+                      onPressed: () {
+                        // ref.read(cartNotifierProvider.notifier).removeProduct(allProducts[index]);
+                      },
+                      child: const Text('Remove from cart'),
                     ),
-                  )
+                  if (!cartProducts.contains(allProducts[index]))
+                    TextButton(
+                      onPressed: () {
+                        // ref.read(cartNotifierProvider.notifier).removeProduct(allProducts[index]);
+                      },
+                      child: const Text('Add to cart'),
+                    ),
                 ],
               ),
             );
