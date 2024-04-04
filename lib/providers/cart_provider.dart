@@ -35,5 +35,16 @@ class CartNotifier extends _$CartNotifier {
   }
 }
 
+//   --- cartTotalProvider
+@riverpod
+double cartTotal(CartTotalRef ref) {
+  final cartProducts = ref.watch(cartNotifierProvider);
+  double total = 0;
+  for (final product in cartProducts) {
+    total += product.price;
+  }
+  return total;
+  // return cartProducts.fold(0, (total, product) => total + product.price);
+}
 //  //  //   ///
 
