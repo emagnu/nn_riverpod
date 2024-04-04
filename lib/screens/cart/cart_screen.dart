@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 //  Import FILES
+import '../../providers/cart_provider.dart';
 import '../../providers/product_provider.dart';
 //  PARTS
 //  PROVIDERS
