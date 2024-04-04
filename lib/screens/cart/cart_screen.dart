@@ -25,6 +25,8 @@ class _CartScreenState extends ConsumerState<CartScreen> {
     // final cartProducts = ref.watch(reducedProductsProvider);
     final cartProducts = ref.watch(cartNotifierProvider);
     final total = ref.watch(cartTotalProvider);
+    final numberOfItems = ref.watch(cartNotifierProvider).length;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Your Cart'),
@@ -53,10 +55,11 @@ class _CartScreenState extends ConsumerState<CartScreen> {
                 );
               }).toList(),
             ),
+            const SizedBox(height: 30.0),
 
             // output totals here
             Text(
-              'Total Amount: £$total',
+              'Your cart holds $numberOfItems items \nfor a Total Amount: £$total',
               textAlign: TextAlign.justify,
               style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             )
