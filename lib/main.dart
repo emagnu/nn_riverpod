@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 //  Import FILES
 import 'screens/home/home_screen.dart';
-//  PARTS
-//  PROVIDERS
 //  //  //   ///
 
 void main() {

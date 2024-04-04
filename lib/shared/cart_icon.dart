@@ -1,12 +1,9 @@
 //  //   ///
 //  Import LIBRARIES
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 //  Import FILES
 import '../screens/cart/cart_screen.dart';
-import '../providers/product_provider.dart';
-//  PARTS
-//  PROVIDERS
+
 //  //  //   ///
 
 class CartIcon extends StatelessWidget {
@@ -14,7 +11,6 @@ class CartIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final item = ref.watch(productsProviders);
     return Stack(
       children: [
         IconButton(
@@ -35,7 +31,7 @@ class CartIcon extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: Colors.blueAccent,
-            ),child:  Text('$'),
+            ),
           ),
         ),
       ],

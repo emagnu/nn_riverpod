@@ -7,13 +7,13 @@ import '../models/product.dart';
 part 'product_provider.g.dart';
 
 //  PROVIDERS
-//   --- productsProviders
+//   --- productsProvider
 @riverpod
 List<Product> products(ProductsRef ref) {
   return allProducts;
 }
 
-//   --- reducedProductsProviders
+//   --- reducedProductsProvider
 @riverpod
 List<Product> reducedProducts(ReducedProductsRef ref) {
   return allProducts.where((p) => p.price < 50).toList();
@@ -28,7 +28,7 @@ const List<Product> allProducts = [
       image: 'assets/products/shorts.png'),
   Product(
       id: '2',
-      title: 'Karati Kit',
+      title: 'Karate Kit',
       price: 34,
       image: 'assets/products/karati.png'),
   Product(
